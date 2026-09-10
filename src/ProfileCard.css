@@ -1,0 +1,65 @@
+.profile-card {
+  width: 320px;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.profile-card.light {
+  background-color: #ffffff;
+  color: #1a1a1a; /* Texto oscuro para que contraste perfectamente sobre blanco */
+  border: 1px solid #e1e1e1;
+}
+
+.profile-card.light h2 {
+  color: #1a1a1a; /* Forza a que el título sea oscuro en modo claro */
+}
+
+.profile-card.dark {
+  background-color: #1a1a1a;
+  color: #f0f0f0; /* Texto claro sobre fondo oscuro */
+  border: 1px solid #333333;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #646cff;
+}
+
+.profile-role {
+  display: inline-block;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: #646cff;
+  font-weight: bold;
+}
+
+.profile-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.profile-btn {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.profile-btn:hover {
+  background-color: #535bf2;
+}
