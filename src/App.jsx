@@ -1,11 +1,26 @@
 import { useState } from 'react';
 import ProfileCard from './ProfileCard';
+import ProjectList from './ProjectList';
 import './App.css';
 
 const userData = {
   name: "Bryan Pirille",
   role: "Frontend Developer & UI Specialist",
   bio: "Construyendo interfaces web modernas, responsivas y eficientes con React, cuidando cada detalle de la experiencia de usuario.",
+  projects: [
+    {
+      id: 1,
+      title: "Red Movilidad Case Study",
+      description: "Análisis y rediseño de la experiencia de usuario para el sistema de transporte.",
+      tech: ["React", "UI/UX", "Figma"]
+    },
+    {
+      id: 2,
+      title: "React Frontend Portfolio",
+      description: "Portafolio modular desarrollado con componentes reutilizables y Vite.",
+      tech: ["React", "Vite", "CSS"]
+    }
+  ],
   avatarUrl: "https://i.ibb.co/dsCGXFpZ/Gemini-Generated-Image-m6g9ffm6g9ffm6g9.jpg"
 };
 
@@ -24,7 +39,6 @@ function App() {
         </button>
       </div>
 
-      {/* 2. Aquí adentro del return solo llamamos a los datos usando el objeto */}
       <ProfileCard 
         name={userData.name}
         role={userData.role}
@@ -32,6 +46,8 @@ function App() {
         avatarUrl={userData.avatarUrl}
         isDarkMode={isDarkMode}
       />
+
+      <ProjectList projects={userData.projects} />
 
     </main>
   );
