@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProfileCard from './ProfileCard';
 import ProjectList from './ProjectList';
+import ContactSection from './ContactSection';
 import './App.css';
 
 const userData = {
@@ -21,7 +22,12 @@ const userData = {
       tech: ["React", "Vite", "CSS"]
     }
   ],
-  avatarUrl: "https://i.ibb.co/dsCGXFpZ/Gemini-Generated-Image-m6g9ffm6g9ffm6g9.jpg"
+  avatarUrl: "https://i.ibb.co/dsCGXFpZ/Gemini-Generated-Image-m6g9ffm6g9ffm6g9.jpg",
+  contact: {
+    email: "bryanopirille@gmail.com",
+    github: "https://github.com/bryanopirille-beep",
+    linkedin: "https://www.linkedin.com/in/bryan-pirille/"
+  }
 };
 
 function App() {
@@ -48,6 +54,8 @@ function App() {
       />
 
       <ProjectList projects={userData.projects} />
+
+      <ContactSection contact={userData.contact} />
 
     </main>
   );
