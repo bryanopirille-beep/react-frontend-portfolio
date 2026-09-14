@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProfileCard from './ProfileCard';
 import ProjectList from './ProjectList';
+import ExperienceSection from './ExperienceSection';
 import ContactSection from './ContactSection';
 import './App.css';
 
@@ -22,6 +23,29 @@ const userData = {
       tech: ["React", "Vite", "CSS"]
     }
   ],
+  experience: [
+    {
+      id: 1,
+      role: "Atención al Cliente",
+      company: "Rock Padel",
+      period: "Dic 2025 - May 2026",
+      description: "Gestión de atención al público, organización y soporte operativo en complejo deportivo."
+    },
+    {
+      id: 2,
+      role: "Ventas",
+      company: "Claro",
+      period: "2016 - 2017",
+      description: "Atención comercial, asesoramiento a clientes y promoción de servicios de telecomunicaciones."
+    },
+    {
+      id: 3,
+      role: "Operador de Radio",
+      company: "Radio Libertad",
+      period: "2014 - 2015",
+      description: "Control de emisión, soporte técnico en transmisiones y operación de equipos de audio."
+    }
+  ],
   avatarUrl: "https://i.ibb.co/dsCGXFpZ/Gemini-Generated-Image-m6g9ffm6g9ffm6g9.jpg",
   contact: {
     email: "bryanopirille@gmail.com",
@@ -34,28 +58,59 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: isDarkMode ? '#0f0f0f' : '#f9f9f9', padding: '2rem' }}>
+    <main style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      backgroundColor: isDarkMode ? '#0f0f0f' : '#f4f5f7', 
+      color: isDarkMode ? '#ffffff' : '#1f2937',
+      padding: '1.5rem 1rem',
+      transition: 'background-color 0.3s ease, color 0.3s ease'
+    }}>
       
-      <div style={{ marginBottom: '1rem' }}>
+      {/* Botón de cambio de tema flotante/superior */}
+      <div style={{ width: '100%', maxWidth: '700px', display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
         <button 
           onClick={() => setIsDarkMode(!isDarkMode)}
-          style={{ padding: '0.5rem 1.0rem', cursor: 'pointer', borderRadius: '6px', border: '1px solid #ccc' }}
+          style={{ 
+            padding: '0.5rem 1rem', 
+            cursor: 'pointer', 
+            borderRadius: '8px', 
+            border: isDarkMode ? '1px solid #333' : '1px solid #d1d5db',
+            backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff',
+            color: isDarkMode ? '#ffffff' : '#333333',
+            fontWeight: '500',
+            fontSize: '0.85rem',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+          }}
         >
-          Cambiar a modo {isDarkMode ? 'Claro ☀️' : 'Oscuro 🌙'}
+          {isDarkMode ? 'Modo Claro ☀️' : 'Modo Oscuro 🌙'}
         </button>
       </div>
 
-      <ProfileCard 
-        name={userData.name}
-        role={userData.role}
-        bio={userData.bio}
-        avatarUrl={userData.avatarUrl}
-        isDarkMode={isDarkMode}
-      />
+      {/* Contenedor principal adaptable estilo Dashboard / Bento */}
+      <div style={{ 
+        width: '100%', 
+        maxWidth: '700px', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '2rem' 
+      }}>
+        <ProfileCard 
+          name={userData.name}
+          role={userData.role}
+          bio={userData.bio}
+          avatarUrl={userData.avatarUrl}
+          isDarkMode={isDarkMode}
+        />
 
-      <ProjectList projects={userData.projects} />
+        <ProjectList projects={userData.projects} isDarkMode={isDarkMode} />
 
-      <ContactSection contact={userData.contact} />
+        <ExperienceSection experience={userData.experience} isDarkMode={isDarkMode} />
+
+        <ContactSection contact={userData.contact} isDarkMode={isDarkMode} />
+      </div>
 
     </main>
   );
