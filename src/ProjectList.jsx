@@ -2,8 +2,13 @@ import React from 'react';
 
 function ProjectList({ projects, isDarkMode }) {
   return (
-    <section style={{ width: '100%', maxWidth: '600px', marginTop: '2.5rem' }}>
-      <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem', textAlign: 'center', color: isDarkMode ? '#fff' : '#333', fontWeight: 'bold' }}>
+<section style={{ 
+  width: '100%', 
+  maxWidth: '600px', 
+  marginTop: '2.5rem', 
+  marginLeft: 'auto', 
+  marginRight: 'auto'  
+}}>      <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem', textAlign: 'center', color: isDarkMode ? '#fff' : '#333', fontWeight: 'bold' }}>
         Mis Proyectos
       </h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>

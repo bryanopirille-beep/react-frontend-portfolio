@@ -2,8 +2,14 @@ import React from 'react';
 
 function ExperienceSection({ experience, isDarkMode }) {
   return (
-    <section style={{ width: '100%', maxWidth: '600px', marginTop: '2.5rem', color: isDarkMode ? '#fff' : '#333' }}>
-      <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem', textAlign: 'center', fontWeight: 'bold' }}>
+<section style={{ 
+  width: '100%', 
+  maxWidth: '600px', 
+  marginTop: '2.5rem', 
+  marginLeft: 'auto', 
+  marginRight: 'auto' 
+}}>
+        <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem', textAlign: 'center', fontWeight: 'bold' }}>
         Experiencia Laboral
       </h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>

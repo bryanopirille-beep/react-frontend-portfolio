@@ -28,16 +28,30 @@ function ProfileCard({ name, role, bio, avatarUrl, isDarkMode }) {
       <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: isDarkMode ? '#9ca3af' : '#4b5563', maxWidth: '500px', margin: '0 auto 1.5rem auto' }}>
         {bio}
       </p>
-      <button style={{ 
-        backgroundColor: '#61dafb', 
-        color: '#000000', 
-        border: 'none', 
-        padding: '0.6rem 1.5rem', 
-        borderRadius: '8px', 
-        fontWeight: 'bold', 
-        cursor: 'pointer',
-        fontSize: '0.9rem'
-      }}>
+      <button 
+        onClick={() => {
+          // 1. Buscamos el elemento de contacto por su ID
+          const contactElement = document.getElementById('contacto-section');
+          // 2. Si existe, hacemos un desplazamiento suave hacia él
+          if (contactElement) {
+            contactElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        style={{ 
+          backgroundColor: '#61dafb', 
+          color: '#000000', 
+          border: 'none', 
+          padding: '0.6rem 1.5rem', 
+          borderRadius: '8px', 
+          fontWeight: 'bold', 
+          cursor: 'pointer',
+          fontSize: '0.9rem',
+          transition: 'transform 0.2s ease' // <- Añadido para animar el zoom
+        }}
+        // 3. Efectos de escala al pasar el mouse por encima
+        onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+      >
         Conectar
       </button>
     </div>

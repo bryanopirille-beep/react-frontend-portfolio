@@ -1,3 +1,4 @@
+import SkillsSection from './SkillsSection';
 import { useState } from 'react';
 import ProfileCard from './ProfileCard';
 import ProjectList from './ProjectList';
@@ -9,6 +10,16 @@ const userData = {
   name: "Bryan Pirille",
   role: "Frontend Developer & UI Specialist",
   bio: "Construyendo interfaces web modernas, responsivas y eficientes con React, cuidando cada detalle de la experiencia de usuario.",
+  skills: [
+    "React", 
+    "Vite", 
+    "JavaScript (ES6+)", 
+    "CSS / Estilos", 
+    "Git & GitHub", 
+    "Figma", 
+    "UI/UX Design", 
+    "Responsive Design"
+  ],
   projects: [
     {
       id: 1,
@@ -107,7 +118,9 @@ function App() {
 
         <ProjectList projects={userData.projects} isDarkMode={isDarkMode} />
 
-        <ExperienceSection experience={userData.experience} isDarkMode={isDarkMode} />
+       <SkillsSection skills={userData.skills} isDarkMode={isDarkMode} />
+
+      <ExperienceSection experience={userData.experience} isDarkMode={isDarkMode} />
 
         <ContactSection contact={userData.contact} isDarkMode={isDarkMode} />
       </div>

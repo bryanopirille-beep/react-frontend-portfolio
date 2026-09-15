@@ -2,7 +2,17 @@ import React from 'react';
 
 function ContactSection({ contact, isDarkMode }) {
   return (
-    <section style={{ width: '100%', maxWidth: '600px', marginTop: '2.5rem', textAlign: 'center' }}>
+    <section 
+      id="contacto-section" 
+      style={{ 
+        width: '100%', 
+        maxWidth: '600px', 
+        marginTop: '2.5rem', 
+        textAlign: 'center',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      }}
+    >
       <h2 style={{ marginBottom: '0.5rem', fontSize: '1.5rem', color: isDarkMode ? '#fff' : '#333', fontWeight: 'bold' }}>
         Contacto
       </h2>
